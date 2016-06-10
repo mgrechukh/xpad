@@ -1,0 +1,15 @@
+Source: xpad
+Section: x11
+Priority: optional
+Maintainer: Bart Martens <bartm@debian.org>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev, libgtk2.0-dev (>> 2.6.0), imagemagick, intltool (>= 0.31), libmagickcore-extra
+Standards-Version: 3.9.3
+Homepage: http://mterry.name/xpad/
+
+Package: xpad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: sticky note application for X
+ This program consists of independent pad windows, each is basically a text box
+ in which notes can be written. Xpad attempts to emulate the look of postit 
+ notes, although the look of the notes can be customized any way you like.

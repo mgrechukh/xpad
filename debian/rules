@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+%:
+	dh  $@
+
+SAVERESTORE := \
+ 	po/xpad.pot \
+	xpad.desktop \
+
+override_dh_auto_configure:
+	for f in $(SAVERESTORE) ; do [ -e $$f.d-r-orig ] || cp -p $$f $$f.d-r-orig ; done
+	dh_auto_configure
+	[ -e xpad.xpm ] || \
+	convert -resize 32x32 images/hicolor/scalable/apps/xpad.svg xpad.xpm
+
+override_dh_auto_clean:
+	dh_auto_clean
+	for f in $(SAVERESTORE) ; do [ ! -e $$f.d-r-orig ] || mv $$f.d-r-orig $$f ; done
+	rm -f xpad.xpm
+

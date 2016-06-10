@@ -1,0 +1,16 @@
+Index: xpad-4.0/po/Makefile.in.in
+===================================================================
+--- xpad-4.0.orig/po/Makefile.in.in	2010-04-11 18:20:33.000000000 +0200
++++ xpad-4.0/po/Makefile.in.in	2010-04-11 18:22:21.000000000 +0200
+@@ -144,9 +144,8 @@
+ check: all $(GETTEXT_PACKAGE).pot
+ 	rm -f missing notexist
+ 	srcdir=$(srcdir) $(INTLTOOL_UPDATE) -m
+-	if [ -r missing -o -r notexist ]; then \
+-	  exit 1; \
+-	fi
++	# intentionally not exiting here
++	rm -f missing
+ 
+ mostlyclean:
+ 	rm -f *.pox $(GETTEXT_PACKAGE).pot *.old.po cat-id-tbl.tmp
