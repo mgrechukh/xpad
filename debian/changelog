@@ -1,3 +1,36 @@
+xpad (4.8.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release: (Closes: #805723) (LP: #1525656)
+    + fixes markup issue in russian translation. (Closes: #797630)
+    + fixes moving xpad window rendering the application unresponsive.
+      (Closes: #614337)
+    + includes a configurable wait for the systray. (Closes: #555934)
+  * New maintainer. (Closes: #826924)
+  * Patches:
+    + remove missing.diff, no longer needed.
+    + add 01_fix_typos and 02_add_keywords_to_desktop_file.
+  * Remove Debian menu support as per #741573.
+  * Control:
+    + add build-depends on libgtk-3-dev, libgtksourceview-3.0-dev,
+      dh-autoreconf.
+    + remove build-depends on libgtk2.0-dev, libmagickcore-extra,
+      autotools-dev, imagemagick.
+    + add VCS links.
+    + change upstream homepage to their launchpad site.
+  * Bump compat and debhelper version to 9.
+  * Docs: don't install AUTHORS, THANKS, TODO (not relevant for end
+    users) or NEWS (superseded by ChangeLog).
+  * Rules:
+    + simplify to just dh sequencer with autoreconf.
+    + enable all hardening.
+  * Copyright:
+    + convert to machine-readable format.
+    + update all upstream info.
+    + add myself as a copyright holder for the packaging.
+  * Bump Standards-Version to 3.9.8 (from 3.9.3; no further changes).
+
+ -- JCF Ploemen (jcfp) <linux@jcf.pm>  Fri, 10 Jun 2016 15:52:43 +0000
+
 xpad (4.1-1) unstable; urgency=low
 
   * New upstream release.

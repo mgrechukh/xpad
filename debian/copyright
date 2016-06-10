@@ -1,86 +1,182 @@
-This package was debianized by Søren Boll Overgaard <boll@debian.org> on
-Fri, 17 May 2002 17:14:28 +0200.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Xpad
+Upstream-Contact: xpad-team@lists.launchpad.net
+Source: https://launchpad.net/xpad
 
-It was downloaded from:
-
-    http://xpad.sourceforge.net/download.html
-    http://mterry.name/xpad/
-    https://launchpad.net/xpad/+download
-
-Upstream Author:
-
-    Michael Terry <msterry@student.umass.edu>
-    Michael Terry <mikix@users.sourceforge.net>
-    Michael Terry <mterry@fastmail.fm>
-    Michael Terry <mike@mterry.name>
-
+Files: *
 Copyright:
+ 2001-2007 Michael Terry
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-Copyright (c) 2001-2007 Michael Terry
-Copyright (c) 2002 Jamis Buck
-Copyright (C) 1994-2007 Free Software Foundation, Inc.
-Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
-Copyright (c) 2009 Paul Ivanov
+Files: src/xpad-pad.c
+Copyright:
+ 2001-2007 Michael Terry
+ 2009 Paul Ivanov
+ 2011 Sergei Riaguzov
+ 2011 Dennis Hilmar
+ 2011 OBATA Akio
+ 2013-2015 Arthur Borsboom
+License: GPL-3+
 
-License:
+Files:
+ src/xpad-text-buffer.c
+ src/xpad-text-buffer.h
+Copyright:
+ 2001-2007 Michael Terry
+ 2011 Sergei Riaguzov
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+Files:
+ src/xpad-undo.c
+ src/xpad-undo.h
+Copyright:
+ 2001-2007 Michael Terry
+ 2010 Sergei Riaguzov
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+Files:
+ src/xpad-app.c
+ src/xpad-pad-group.c
+Copyright:
+ 2001-2007 Michael Terry
+ 2009 Paul Ivanov
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Files:
+ src/xpad-tray.h
+ src/xpad-tray.c
+Copyright:
+ 2002 Jamis Buck
+ 2003-2007 Michael Terry
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-On Debian systems, the complete text of the GNU General
-Public License can be found in `/usr/share/common-licenses/GPL-3'.
+Files: src/fio.c
+Copyright:
+ 2001-2007 Michael Terry
+ 2011 David Hull
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-The Debian packaging is
-Copyright (C) 2002-2006, Søren Boll Overgaard <boll@debian.org>
-Copyright (C) 2007-2009, Bart Martens <bartm@knars.be>
-and is licensed under the GPL, see above.
+Files: src/xpad-pad.h
+Copyright:
+ 2001-2007 Michael Terry
+ 2009 Paul Ivanov
+ 2011 Sergei Riaguzov
+ 2013-2014 Arthur Borsboom
+License: GPL-3+
 
-The file install-sh has this copyright and license information:
+Files: debian/*
+Copyright:
+ 2002-2006, Søren Boll Overgaard <boll@debian.org>
+ 2007-2009, Bart Martens <bartm@knars.be>
+ 2016, JCF Ploemen (jcfp) <linux@jcf.pm>
+License: GPL-3+
 
-# Copyright (C) 1994 X Consortium
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to
-# deal in the Software without restriction, including without limitation the
-# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-# sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-# X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
-# AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
-# TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
-# Except as contained in this notice, the name of the X Consortium shall not
-# be used in advertising or otherwise to promote the sale, use or other deal-
-# ings in this Software without prior written authorization from the X Consor-
-# tium.
-#
-#
-# FSF changes to this file are in the public domain.
+Files:
+ po/es.po
+ po/ro.po
+ po/ga.po
+Copyright: 2003 Free Software Foundation, Inc.
+License: GPL-3+
 
-The file po/Makefile.in.in has this copyright and license information:
+Files:
+ po/fr.po
+ po/af.po
+Copyright: 2004 Free Software Foundation, Inc.
+License: GPL-3+
 
-# Copyright (C) 1995, 1996, 1997 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
-# Copyright (C) 2004-2008 Rodney Dawes <dobey.pwns@gmail.com>
-#
-# This file may be copied and used freely without restrictions.  It may
-# be used in projects which are not available under a GNU Public License,
-# but which still want to provide support for the GNU gettext functionality.
+Files:
+ po/sl.po
+ po/hu.po
+ po/da.po
+ po/zh_TW.po
+ po/sv.po
+ po/zh_CN.po
+ po/rw.po
+Copyright: 2005 Free Software Foundation, Inc.
+License: GPL-3+
 
+Files: po/bg.po
+Copyright: 2005, 2006 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: po/vi.po
+Copyright: 2006 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: po/nl.po
+Copyright: 2004, 2007 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: po/fi.po
+Copyright: 2007 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files:
+ po/ja.po
+ po/lv.po
+Copyright: 2008 Rosetta Contributors and Canonical Ltd
+License: GPL-3+
+
+Files:
+ po/de.po
+ po/th.po
+ po/tr.po
+Copyright: 2009 Rosetta Contributors and Canonical Ltd
+License: GPL-3+
+
+Files:
+ po/lt.po
+ po/he.po
+ po/id.po
+ po/pt_BR.po
+ po/en_AU.po
+ po/si.po
+ po/hr.po
+ po/pt.po
+ po/cs.po
+ po/et.po
+ po/gl.po
+ po/ar.po
+ po/pl.po
+ po/eu.po
+ po/uk.po
+Copyright: 2013 Rosetta Contributors and Canonical Ltd
+License: GPL-3+
+
+Files: po/sr.po
+Copyright: 2015 Rosetta Contributors and Canonical Ltd
+License: GPL-3+
+
+Files:
+ po/ca.po
+ po/be.po
+Copyright: 2016 Rosetta Contributors and Canonical Ltd
+License: GPL-3+
+
+Files: po/ms.po
+Copyright: 2005 Sharuzzaman Ahmat Raslan
+License: GPL-3+
+
+License: GPL-3+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-3' file.
