@@ -1,0 +1,12 @@
+Description: add keywords to the desktop file
+Author: <linux@jcf.pm>
+Forwarded: https://bugs.launchpad.net/xpad/+bug/1591368
+Last-Update: 2016-06-10
+
+--- xpad-4.8.0.orig/xpad.desktop.in
++++ xpad-4.8.0/xpad.desktop.in
+@@ -16,3 +16,4 @@ StartupWMClass=xpad
+ Type=Application
+ Categories=GTK;Utility;
+ X-LXQt-Need-Tray=true
++Keywords=notes;postit
