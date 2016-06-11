@@ -1,0 +1,15 @@
+Description: stop distclean from deleting po/Makefile.in.in
+ With po/Makefile.in.in gone, building twice in a row fails.
+ Probable upstream typo.
+Author: <linux@jcf.pm>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Last-Update: 2016-06-11
+
+--- xpad-4.8.0.orig/Makefile.am
++++ xpad-4.8.0/Makefile.am
+@@ -15,4 +15,4 @@ EXTRA_DIST = $(desktop_in_files) intltoo
+ DISTCLEANFILES = xpad.desktop intltool-extract intltool-merge intltool-update po/xpad.pot \
+ Makefile.in aclocal.m4 autom4te.cache/* compile config.h.in configure depcomp install-sh \
+ intltool-extract.in intltool-merge.in intltool-update.in missing autopackage/Makefile.in \
+-doc/Makefile.in images/Makefile.in po/Makefile.in.in src/Makefile.in *.in~ *.~1~
++doc/Makefile.in images/Makefile.in po/Makefile.in src/Makefile.in *.in~ *.~1~
