@@ -8,7 +8,8 @@ xpad (4.8.0-1) unstable; urgency=medium
   * New maintainer. (Closes: #826924)
   * Patches:
     + remove missing.diff, no longer needed.
-    + add 01_fix_typos and 02_add_keywords_to_desktop_file.
+    + add 01_fix_typos, 02_add_keywords_to_desktop_file, and
+      03_preserve_po-Makefile-in-in.diff.
   * Remove Debian menu support as per #741573.
   * Control:
     + add build-depends on libgtk-3-dev, libgtksourceview-3.0-dev,
