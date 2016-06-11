@@ -2,7 +2,7 @@ Description: stop distclean from deleting po/Makefile.in.in
  With po/Makefile.in.in gone, building twice in a row fails.
  Probable upstream typo.
 Author: <linux@jcf.pm>
-Forwarded: <no|not-needed|url proving that it has been forwarded>
+Forwarded: https://bugs.launchpad.net/xpad/+bug/1591497
 Last-Update: 2016-06-11
 
 --- xpad-4.8.0.orig/Makefile.am
