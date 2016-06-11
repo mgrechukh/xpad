@@ -1,4 +1,4 @@
-xpad (4.8.0-1) UNRELEASED; urgency=medium
+xpad (4.8.0-1) unstable; urgency=medium
 
   * New upstream release: (Closes: #805723) (LP: #1525656)
     + fixes markup issue in russian translation. (Closes: #797630)
