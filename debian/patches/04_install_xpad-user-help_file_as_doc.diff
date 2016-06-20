@@ -1,0 +1,19 @@
+Description: install upstream user help file as documention
+ Upstream buildsys installs this file as /usr/share/xpad/help/xpad-user-help.txt
+ which works fine but may hide it from users expecting all docs to be in
+ /usr/share/<pkgname>/doc/ on Debian.
+Author: <linux@jcf.pm>
+Forwarded: not-needed
+Last-Update: 2016-06-20
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -64,7 +64,7 @@
+ fi
+ AC_DEFINE_UNQUOTED(LOCALE_DIR, "${PREFIX}/${DATADIRNAME}/locale",[Locale directory])
+ AC_DEFINE_UNQUOTED(THEME_DIR, "${PREFIX}/${DATADIRNAME}/icons",[Icon directory])
+-AC_DEFINE_UNQUOTED(HELP_FILE, "${PREFIX}/${DATADIRNAME}/xpad/help/xpad-user-help.txt",[Help file])
++AC_DEFINE_UNQUOTED(HELP_FILE, "${PREFIX}/${DATADIRNAME}/doc/xpad/xpad-user-help.txt",[Help file])
+ AC_DEFINE_UNQUOTED(BASE_DIR, "${PREFIX}",[Base directory])
+ 
+ # Determines if we're debugging.
