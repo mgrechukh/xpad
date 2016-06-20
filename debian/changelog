@@ -19,6 +19,7 @@ xpad (4.8.0-1) unstable; urgency=medium
       autotools-dev, imagemagick.
     + add VCS links.
     + change upstream homepage to their launchpad site.
+    + sorted/reordered build depedencies.
   * Bump compat and debhelper build dependency version to 9.
   * Docs: don't install AUTHORS, THANKS, TODO (not relevant for end
     users) or NEWS (superseded by ChangeLog).
