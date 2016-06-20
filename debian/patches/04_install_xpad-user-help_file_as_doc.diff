@@ -17,3 +17,13 @@ Last-Update: 2016-06-20
  AC_DEFINE_UNQUOTED(BASE_DIR, "${PREFIX}",[Base directory])
  
  # Determines if we're debugging.
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
+@@ -1,6 +1,6 @@
+ dist_man_MANS = xpad.1
+ 
+-helpdir=$(datadir)/xpad/help
++helpdir=$(datadir)/doc/xpad
+ help_DATA= \
+ 	xpad-user-help.txt \
+ 	$(NULL)
