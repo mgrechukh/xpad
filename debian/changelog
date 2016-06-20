@@ -30,6 +30,7 @@ xpad (4.8.0-1) unstable; urgency=medium
     + update all upstream info.
     + add myself as a copyright holder for the packaging.
   * Bump Standards-Version to 3.9.8 (from 3.9.3; no further changes).
+  * Watch: enable cryptographic verification of upstream releases.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Fri, 10 Jun 2016 15:52:43 +0000
 
