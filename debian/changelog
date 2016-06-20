@@ -23,11 +23,11 @@ xpad (4.8.0-1) unstable; urgency=medium
   * Docs:
     + don't install AUTHORS, THANKS, TODO (not relevant for end users)
       or NEWS (superseded by ChangeLog).
-    + add a link to xpad-user-help.txt from /usr/share/doc/xpad/, in
-      favor of installing the file itself in that dir. This prevents it
-      from being gzipped (which makes it unusable when loaded from
-      within the application) and avoids the maintainance burden of
-      patching the upstream buildsys.
+    + add a link to xpad-user-help.txt from /usr/share/doc/xpad/ in
+      favor of installing the file itself in that dir (in accordance
+      with policy, section 12.3). Doing so also prevents the file from
+      being gzipped, which would make it unusable for loading from
+      within the application, and avoids patching the upstream buildsys.
   * Rules:
     + simplify to just dh sequencer with autoreconf.
     + enable all hardening.
