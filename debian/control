@@ -3,8 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: JCF Ploemen (jcfp) <linux@jcf.pm>
 Build-Depends:
- debhelper (>= 9),
- dh-autoreconf,
+ debhelper (>= 10),
  intltool,
  libgtk-3-dev (>= 3.10),
  libgtksourceview-3.0-dev (>= 3.10)
