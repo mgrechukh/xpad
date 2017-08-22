@@ -5,6 +5,8 @@ xpad (5.0.0-1) UNRELEASED; urgency=medium
     + fixes replacement of brackets in pad text. (Closes: #849828)
   * Bump Standards-Version to 4.1.0.0 (from 3.9.8; no further changes).
   * Compat: bump to 10 (from 9) and set debhelper version accordingly.
+  * Control: remove build-dep on dh-autoreconf, redundant with dh 10.
+  * Watch: update upstream gpg key (old: A6F2322B; new: 951FC552).
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 22 Aug 2017 09:04:58 +0000
 
