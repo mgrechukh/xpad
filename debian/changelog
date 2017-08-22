@@ -1,3 +1,11 @@
+xpad (5.0.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release. (Closes: #872686)
+    + fixes invisible selection with custom colors. (Closes: #849792)
+    + fixes replacement of brackets in pad text. (Closes: #849828)
+
+ -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 22 Aug 2017 09:04:58 +0000
+
 xpad (4.8.0-1) unstable; urgency=medium
 
   * New upstream release: (Closes: #805723) (LP: #1525656)
