@@ -7,6 +7,7 @@ xpad (5.0.0-1) UNRELEASED; urgency=medium
   * Compat: bump to 10 (from 9) and set debhelper version accordingly.
   * Control: remove build-dep on dh-autoreconf, redundant with dh 10.
   * Watch: update upstream gpg key (old: A6F2322B; new: 951FC552).
+  * Patches: remove all, merged upstream.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 22 Aug 2017 09:04:58 +0000
 
