@@ -9,6 +9,8 @@ xpad (5.0.0-1) UNRELEASED; urgency=medium
   * Watch: update upstream gpg key (old: A6F2322B; new: 951FC552).
   * Patches: remove all, merged upstream.
   * Rules: add workaround for missing po/Makefile.in.in.
+  * Add d/clean to cleanup po/Makefile.in.in created by intltoolize in
+    d/rules.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 22 Aug 2017 09:04:58 +0000
 
