@@ -3,7 +3,11 @@ xpad (5.1.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Bump Standards-Version to 4.2.1 (from 4.1.0; no further changes).
   * Compat: bump to 11 (from 10) and set debhelper version accordingly.
-  * Copyright: bump years for upstream and packaging.
+  * Copyright:
+    + bump years for upstream and packaging.
+    + use https for copyright format URI.
+  * Rules: remove '--with autoreconf' from dh sequencer, obsolete.
+  * Remove trailing whitespaces from d/{changelog,control}.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 04 Sep 2018 12:47:30 +0000
 
@@ -311,7 +315,7 @@ xpad (2.0-b1-3) unstable; urgency=low
 xpad (2.0-b1-2) unstable; urgency=low
 
   * Fix standards version.
-  * Upstream has fixed quite a few bugs, so: 
+  * Upstream has fixed quite a few bugs, so:
     closes: Bug#220994, Bug#247583
   * Fix missing dependency on intltool
 
@@ -355,7 +359,7 @@ xpad (1.11-1) unstable; urgency=low
 
 xpad (1.10-2) unstable; urgency=low
 
-  * Improve clean target, to remove useless cruft from /tmp/ 
+  * Improve clean target, to remove useless cruft from /tmp/
     (closes: Bug#194135).
 
  -- Søren Boll Overgaard <boll@debian.org>  Wed,  4 Jun 2003 14:50:03 +0000
