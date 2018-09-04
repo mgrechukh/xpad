@@ -1,6 +1,8 @@
 xpad (5.1.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Bump Standards-Version to 4.2.1 (from 4.1.0; no further changes).
+  * Compat: bump to 11 (from 10) and set debhelper version accordingly.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 04 Sep 2018 12:47:30 +0000
 
