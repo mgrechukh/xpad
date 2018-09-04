@@ -499,4 +499,3 @@ xpad (1.1-1) unstable; urgency=low
   * Changed Makefile to install xpm-file without execute bits set.
 
  -- Søren Boll Overgaard <boll@debian.org>  Fri, 17 May 2002 17:14:28 +0200
-
