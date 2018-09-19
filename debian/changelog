@@ -8,6 +8,11 @@ xpad (5.1.0-1) UNRELEASED; urgency=medium
     + use https for copyright format URI.
   * Rules: remove '--with autoreconf' from dh sequencer, obsolete.
   * Remove trailing whitespaces from d/{changelog,control}.
+  * Control:
+    + add build-dep on libgl1-mesa-dev (for pkgconfig/gl.pc).
+    + add explicit build-dep on libglib2.0-dev (to enforce a required
+      minimum version, see upstream rev. 961).
+    + bump version for gtk-related build-deps to 3.22 (from 3.10).
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 04 Sep 2018 12:47:30 +0000
 
