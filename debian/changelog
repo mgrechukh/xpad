@@ -1,4 +1,4 @@
-xpad (5.1.0-1) UNRELEASED; urgency=medium
+xpad (5.1.0-1) unstable; urgency=medium
 
   * New upstream release.
   * Bump Standards-Version to 4.2.1 (from 4.1.0; no further changes).
@@ -16,7 +16,7 @@ xpad (5.1.0-1) UNRELEASED; urgency=medium
   * Watch: add extra gpg key (0C4280A0) to d/upstream/signing-key.asc,
     used by upstream alongside existing key (951FC552).
 
- -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 04 Sep 2018 12:47:30 +0000
+ -- JCF Ploemen (jcfp) <linux@jcf.pm>  Tue, 23 Oct 2018 15:46:47 +0000
 
 xpad (5.0.0-1) unstable; urgency=medium
 
