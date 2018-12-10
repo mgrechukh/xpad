@@ -1,3 +1,10 @@
+xpad (5.2.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * Watch: re-add upstream signing key A6F2322B to the collection.
+
+ -- JCF Ploemen (jcfp) <linux@jcf.pm>  Mon, 10 Dec 2018 17:37:42 +0000
+
 xpad (5.1.0-1) unstable; urgency=medium
 
   * New upstream release.
