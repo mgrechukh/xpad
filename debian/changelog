@@ -1,4 +1,4 @@
-xpad (5.2.0-1) UNRELEASED; urgency=medium
+xpad (5.2.0-1) unstable; urgency=medium
 
   * New upstream release.
   * Watch: re-add upstream signing key A6F2322B to the collection.
