@@ -2,6 +2,8 @@ xpad (5.2.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Watch: re-add upstream signing key A6F2322B to the collection.
+  * Rules: remove override of dh_autoreconf, missing makefile is back.
+  * d/clean: remove, no longer needed.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Mon, 10 Dec 2018 17:37:42 +0000
 
