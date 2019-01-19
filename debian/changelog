@@ -1,6 +1,9 @@
 xpad (5.4.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Rules: add empty override for dh_auto_test. There are no tests, but
+    dh_auto_test will run make check anyway which fails because of a
+    renamed file.
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Sat, 19 Jan 2019 15:42:22 +0000
 
