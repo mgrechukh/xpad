@@ -4,6 +4,9 @@ xpad (5.4.0-1) UNRELEASED; urgency=medium
   * Rules: add empty override for dh_auto_test. There are no tests, but
     dh_auto_test will run make check anyway which fails because of a
     renamed file.
+  * Control: use debhelper-compat instead of debian/compat.
+  * Bump compat level to 12 (from 11; no further changes).
+  * Bump Standards-Version to 4.4.0 (from 4.3.0; no further changes).
 
  -- JCF Ploemen (jcfp) <linux@jcf.pm>  Sat, 19 Jan 2019 15:42:22 +0000
 
