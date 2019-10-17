@@ -11,8 +11,8 @@ Build-Depends:
  libgtksourceview-3.0-dev (>= 3.22)
 Standards-Version: 4.4.0
 Homepage: https://launchpad.net/xpad
-Vcs-Git: https://github.com/jcfp/debpkg-xpad.git
-Vcs-Browser: https://github.com/jcfp/debpkg-xpad/
+Vcs-Git: https://salsa.debian.org/jcfp-guest/xpad.git
+Vcs-Browser: https://salsa.debian.org/jcfp-guest/xpad
 
 Package: xpad
 Architecture: any
