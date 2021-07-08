@@ -74,7 +74,7 @@ Files: debian/*
 Copyright:
  2002-2006, Søren Boll Overgaard <boll@debian.org>
  2007-2009, Bart Martens <bartm@knars.be>
- 2016-2018, JCF Ploemen (jcfp) <linux@jcf.pm>
+ 2016-2018, Jeroen Ploemen <jcfp@debian.org>
 License: GPL-3+
 
 Files:

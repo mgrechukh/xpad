@@ -1,7 +1,7 @@
 Source: xpad
 Section: x11
 Priority: optional
-Maintainer: JCF Ploemen (jcfp) <linux@jcf.pm>
+Maintainer: Jeroen Ploemen <jcfp@debian.org>
 Build-Depends:
  debhelper-compat (= 12),
  intltool,
