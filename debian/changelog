@@ -2,8 +2,10 @@ xpad (5.4.0-2) UNRELEASED; urgency=medium
 
   * Control: switch Vcs fields to salsa.d.o.
   * Use my debian.org email address for maintainer and copyright.
+  * Control: bump Standards-Version to 4.6.0 (from 4.4.0), compat level
+    to 13 (from 12).
 
- -- JCF Ploemen (jcfp) <linux@jcf.pm>  Thu, 17 Oct 2019 18:33:14 +0000
+ -- Jeroen Ploemen <jcfp@debian.org>  Tue, 19 Oct 2021 18:48:25 +0000
 
 xpad (5.4.0-1) unstable; urgency=medium
 
