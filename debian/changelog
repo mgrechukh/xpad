@@ -6,6 +6,7 @@ xpad (5.4.0-2) UNRELEASED; urgency=medium
     to 13 (from 12).
   * Lintian: override package-contains-documentation-outside-usr-share-
     doc.
+  * Copyright: bump year for packaging.
 
  -- Jeroen Ploemen <jcfp@debian.org>  Tue, 19 Oct 2021 18:48:25 +0000
 
