@@ -8,6 +8,7 @@ xpad (5.4.0-2) UNRELEASED; urgency=medium
     doc.
   * Copyright: bump year for packaging.
   * Watch: bump version to 4 (from 3; no further changes).
+  * Control: set Rules-Requires-Root: no.
 
  -- Jeroen Ploemen <jcfp@debian.org>  Tue, 19 Oct 2021 18:48:25 +0000
 
