@@ -1,10 +1,12 @@
 xpad (5.5.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
-  * Control: remove build-deps on intltool, libgtksourceview-3.0-dev;
-    replaced by gettext-base and libgtksourceview-4-dev.
+  * Control:
+    + remove build-deps on intltool, libgtksourceview-3.0-dev; replaced
+      by gettext-base and libgtksourceview-4-dev.
+    + add build-dep on libayatana-appindicator3-dev.
+    + remove ancient version restrictions.
   * Patches: add 01_use_libayatana-appindicator.
-  * Control: add build-dep on libayatana-appindicator3-dev.
   * Copyright: update years and upstream info.
   * Rules: remove empty override of dh_auto_test, issue fixed upstream.
 
