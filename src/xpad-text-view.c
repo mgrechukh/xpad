@@ -56,6 +56,7 @@ static void xpad_text_view_notify_edit_lock (XpadTextView *view);
 static void xpad_text_view_notify_editable (XpadTextView *view);
 static void xpad_text_view_notify_fontname (XpadTextView *view);
 static void xpad_text_view_notify_colors (XpadTextView *view);
+static void xpad_text_view_notify_line_numbering (XpadTextView *view);
 gchar * pango_font_description_to_css (PangoFontDescription *desc);
 
 enum
@@ -101,7 +102,8 @@ xpad_text_view_init (XpadTextView *view)
 	view->priv = xpad_text_view_get_instance_private (view);
 }
 
-static void xpad_text_view_constructed (GObject *object)
+static void
+xpad_text_view_constructed (GObject *object)
 {
 	XpadTextView *view = XPAD_TEXT_VIEW (object);
 
@@ -111,6 +113,7 @@ static void xpad_text_view_constructed (GObject *object)
 	gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD);
 	gtk_container_set_border_width (GTK_CONTAINER (view), 5);
 	gtk_widget_set_name (GTK_WIDGET (view), g_strdup_printf ("%p", (void *) view));
+	xpad_text_view_notify_line_numbering(view);
 
 	/* Add CSS style class, so the styling can be overridden by a GTK theme */
 	GtkStyleContext *context = gtk_widget_get_style_context(GTK_WIDGET (view));
@@ -122,6 +125,7 @@ static void xpad_text_view_constructed (GObject *object)
 	g_signal_connect (view, "realize", G_CALLBACK (xpad_text_view_realize), NULL);
 	g_signal_connect (view, "notify::editable", G_CALLBACK (xpad_text_view_notify_editable), NULL);
 	g_signal_connect_swapped (view->priv->settings, "notify::edit-lock", G_CALLBACK (xpad_text_view_notify_edit_lock), view);
+	g_signal_connect_swapped (view->priv->settings, "notify::line-numbering", G_CALLBACK (xpad_text_view_notify_line_numbering), view);
 
 	view->priv->notify_font_handler = g_signal_connect_swapped (view->priv->settings, "notify::fontname", G_CALLBACK (xpad_text_view_notify_fontname), view);
 	view->priv->notify_text_handler = g_signal_connect_swapped (view->priv->settings, "notify::text-color", G_CALLBACK (xpad_text_view_notify_colors), view);
@@ -335,7 +339,8 @@ xpad_text_view_notify_colors (XpadTextView *view)
 }
 
 /* Set the foreground and background color of the visible part of the pad, which is the text view */
-void xpad_text_view_set_colors (GtkWidget *view, const GdkRGBA *text_color, const GdkRGBA *back_color) {
+void
+xpad_text_view_set_colors (GtkWidget *view, const GdkRGBA *text_color, const GdkRGBA *back_color) {
 	gchar *cssStyling = g_strconcat("textview, textview text {caret-color: ",
 			text_color ? gdk_rgba_to_string (text_color) : "@theme-fg_color",
 			"; color: ",
@@ -359,7 +364,8 @@ void xpad_text_view_set_colors (GtkWidget *view, const GdkRGBA *text_color, cons
 }
 
 /* Set the font of the pad, which is in the text view */
-void xpad_text_view_set_font (GtkWidget *view, PangoFontDescription *desc) {
+void
+xpad_text_view_set_font (GtkWidget *view, PangoFontDescription *desc) {
 	GtkStyleContext *context = gtk_widget_get_style_context (view);
 
 	if (desc == NULL && XPAD_TEXT_VIEW (view)->priv->font_provider) {
@@ -387,3 +393,12 @@ void xpad_text_view_set_font (GtkWidget *view, PangoFontDescription *desc) {
 		g_free (cssStyling);
 	}
 }
+
+static void
+xpad_text_view_notify_line_numbering (XpadTextView *view)
+{
+	gboolean line_numbering;
+	g_object_get (view->priv->settings, "line-numbering", &line_numbering, NULL);
+	gtk_source_view_set_show_line_numbers (GTK_SOURCE_VIEW (view), line_numbering);
+}
+

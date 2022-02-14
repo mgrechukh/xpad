@@ -1,3 +1,15 @@
+Version 5.5
+* New: Ability to search through a pad by Siergiej Riaguzow. (#452226)
+* Fix: Removal of the obsolete undo/redo functionality, since it is already provided by the GtkSourceBuffer by Siergiej Riaguzow. (#1349838)
+* Fix: 'make check' fails over missing/moved xpad.desktop.in (#1812678)
+* Fix: Phased out the deprecated intltool (translation system) in favor of gettext. Source: https://wiki.gnome.org/MigratingFromIntltoolToGettext
+* Fix: Comply to C90 coding standards for comments
+* Fix: Increased the minimum required Glib version from 2.40 to 2.58 in preparation for a shift from GtkSourceView v3 to v4,
+       following https://gitlab.gnome.org/GNOME/gtksourceview/-/issues/84. GtkSourceView v3 uses the deprecated GTimeVal, which is not year 2038 proof.
+* Fix: Increased the minimum required GtkSourceView version from v3.10 to v4.0.3.
+* Fix: Search: use GtkSouceView v4; fix uninitialized variable.
+* Fix: Wayland compatibility: only set the X11 client ID, if Xpad is running in an X11 session.
+
 Version 5.4
 * New: added the AppStream metadata for easier packaging/software maintenance across Linux distributions. (#1809985)
 * Fix: Fixed the regression that the scrollbars are not showing (#1810153)
