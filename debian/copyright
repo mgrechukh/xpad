@@ -6,17 +6,17 @@ Source: https://launchpad.net/xpad
 Files: *
 Copyright:
  2001-2007 Michael Terry
- 2013-2018 Arthur Borsboom
+ 2013-2022 Arthur Borsboom
 License: GPL-3+
 
 Files: src/xpad-pad.c
 Copyright:
  2001-2007 Michael Terry
  2009 Paul Ivanov
- 2011 Sergei Riaguzov
  2011 Dennis Hilmar
  2011 OBATA Akio
  2013-2015 Arthur Borsboom
+ 2019 Sergei Riaguzow
 License: GPL-3+
 
 Files:
@@ -66,15 +66,21 @@ Files: src/xpad-pad.h
 Copyright:
  2001-2007 Michael Terry
  2009 Paul Ivanov
- 2011 Sergei Riaguzov
  2013-2014 Arthur Borsboom
 License: GPL-3+
+
+Files:
+ src/xpad-search-bar.c
+ src/xpad-search-bar.h
+Copyright:
+ 2001-2007 Michael Terry
+ 2019 Siergiej Riaguzow
 
 Files: debian/*
 Copyright:
  2002-2006, Søren Boll Overgaard <boll@debian.org>
  2007-2009, Bart Martens <bartm@knars.be>
- 2016-2021, Jeroen Ploemen <jcfp@debian.org>
+ 2016-2022, Jeroen Ploemen <jcfp@debian.org>
 License: GPL-3+
 
 Files:
