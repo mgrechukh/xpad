@@ -1,3 +1,9 @@
+xpad (5.5.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Mon, 14 Feb 2022 08:23:47 +0000
+
 xpad (5.4.0-2) unstable; urgency=medium
 
   * Control: switch Vcs fields to salsa.d.o.
