@@ -28,9 +28,7 @@ Copyright:
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
-Files:
- src/xpad-undo.c
- src/xpad-undo.h
+Files: src/xpad-undo.*
 Copyright:
  2001-2007 Michael Terry
  2010 Sergei Riaguzov
@@ -46,9 +44,7 @@ Copyright:
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
-Files:
- src/xpad-tray.h
- src/xpad-tray.c
+Files: src/xpad-tray.*
 Copyright:
  2002 Jamis Buck
  2003-2007 Michael Terry
@@ -69,12 +65,11 @@ Copyright:
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
-Files:
- src/xpad-search-bar.c
- src/xpad-search-bar.h
+Files: src/xpad-search-bar.*
 Copyright:
  2001-2007 Michael Terry
  2019 Siergiej Riaguzow
+License: GPL-3+
 
 Files: debian/*
 Copyright:
