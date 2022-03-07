@@ -21,23 +21,22 @@ License: GPL-3+
 
 Files:
  src/xpad-text-buffer.c
- src/xpad-text-buffer.h
 Copyright:
  2001-2007 Michael Terry
- 2011 Sergei Riaguzov
+ 2019 Sergei Riaguzov
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
-Files: src/xpad-undo.*
+Files: src/xpad-search-bar.*
 Copyright:
  2001-2007 Michael Terry
- 2010 Sergei Riaguzov
- 2013-2014 Arthur Borsboom
+ 2019 Sergei Riaguzov
 License: GPL-3+
 
 Files:
  src/xpad-app.c
  src/xpad-pad-group.c
+ src/xpad-pad.h
 Copyright:
  2001-2007 Michael Terry
  2009 Paul Ivanov
@@ -55,13 +54,6 @@ Files: src/fio.c
 Copyright:
  2001-2007 Michael Terry
  2011 David Hull
- 2013-2014 Arthur Borsboom
-License: GPL-3+
-
-Files: src/xpad-pad.h
-Copyright:
- 2001-2007 Michael Terry
- 2009 Paul Ivanov
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
