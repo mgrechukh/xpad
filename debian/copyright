@@ -57,12 +57,6 @@ Copyright:
  2013-2014 Arthur Borsboom
 License: GPL-3+
 
-Files: src/xpad-search-bar.*
-Copyright:
- 2001-2007 Michael Terry
- 2019 Siergiej Riaguzow
-License: GPL-3+
-
 Files: debian/*
 Copyright:
  2002-2006, Søren Boll Overgaard <boll@debian.org>
