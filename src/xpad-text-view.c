@@ -57,7 +57,6 @@ static void xpad_text_view_notify_editable (XpadTextView *view);
 static void xpad_text_view_notify_fontname (XpadTextView *view);
 static void xpad_text_view_notify_colors (XpadTextView *view);
 static void xpad_text_view_notify_line_numbering (XpadTextView *view);
-gchar * pango_font_description_to_css (PangoFontDescription *desc);
 
 enum
 {
@@ -112,7 +111,9 @@ xpad_text_view_constructed (GObject *object)
 	gtk_text_view_set_buffer (GTK_TEXT_VIEW (view), GTK_TEXT_BUFFER (view->priv->buffer));
 	gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD);
 	gtk_container_set_border_width (GTK_CONTAINER (view), 5);
-	gtk_widget_set_name (GTK_WIDGET (view), g_strdup_printf ("%p", (void *) view));
+	gchar *widget_name = g_strdup_printf ("%p", (void *) view);
+	gtk_widget_set_name (GTK_WIDGET (view), widget_name);
+	g_free (widget_name);
 	xpad_text_view_notify_line_numbering(view);
 
 	/* Add CSS style class, so the styling can be overridden by a GTK theme */
@@ -303,7 +304,7 @@ xpad_text_view_notify_editable (XpadTextView *view)
 	display = gdk_window_get_display(view_window);
 	cursor = editable ? gdk_cursor_new_for_display (display, GDK_XTERM) : NULL;
 
-	/* Only set for pads which are currently visible */ 
+	/* Only set for pads which are currently visible */
 	if (view_window != NULL)
 		gdk_window_set_cursor (view_window, cursor);
 
@@ -313,13 +314,15 @@ xpad_text_view_notify_editable (XpadTextView *view)
 static void
 xpad_text_view_notify_fontname (XpadTextView *view)
 {
-	const gchar *font;
+	gchar *font;
 	g_object_get (view->priv->settings, "fontname", &font, NULL);
 
 	PangoFontDescription *fontdesc = font ? pango_font_description_from_string (font) : NULL;
 	xpad_text_view_set_font (GTK_WIDGET (view), fontdesc);
 	if (fontdesc)
 		pango_font_description_free (fontdesc);
+
+	g_free (font);
 }
 
 /* Update the colors of the textview */
@@ -328,26 +331,34 @@ xpad_text_view_notify_colors (XpadTextView *view)
 {
 	if (view->priv->follow_color_style) {
 		/* Set the colors of this individual pad to the global setting preference. */
-		const GdkRGBA *text_color, *back_color;
+		GdkRGBA *text_color, *back_color;
 
 		GtkWidget *view_widget = GTK_WIDGET (view);
 
 		/* Set the colors to the global preferences colors */
 		g_object_get (view->priv->settings, "text-color", &text_color, "back-color", &back_color, NULL);
 		xpad_text_view_set_colors(view_widget, text_color, back_color);
+		gdk_rgba_free (text_color);
+		gdk_rgba_free (back_color);
 	}
 }
 
 /* Set the foreground and background color of the visible part of the pad, which is the text view */
 void
-xpad_text_view_set_colors (GtkWidget *view, const GdkRGBA *text_color, const GdkRGBA *back_color) {
+xpad_text_view_set_colors (GtkWidget *view, GdkRGBA *text_color, GdkRGBA *back_color) {
+	gchar *text_color_string = gdk_rgba_to_string (text_color);
+	gchar *back_color_string = gdk_rgba_to_string (back_color);
+
 	gchar *cssStyling = g_strconcat("textview, textview text {caret-color: ",
-			text_color ? gdk_rgba_to_string (text_color) : "@theme-fg_color",
+			text_color ? text_color_string : "@theme-fg_color",
 			"; color: ",
-			text_color ? gdk_rgba_to_string (text_color) : "@theme_fg_color",
+			text_color ? text_color_string : "@theme_fg_color",
 			"; background-color: ",
-			back_color ? gdk_rgba_to_string (back_color) : "@theme_bg_color",
+			back_color ? back_color_string : "@theme_bg_color",
 			";}\n", NULL);
+
+	g_free (text_color_string);
+	g_free (back_color_string);
 
 	/*
 	 * TODO: If the background color is close to the text selection background color (blue-ish),
@@ -374,11 +385,12 @@ xpad_text_view_set_font (GtkWidget *view, PangoFontDescription *desc) {
 		g_clear_object (&XPAD_TEXT_VIEW (view)->priv->font_provider);
 	} else {
 		/* Add/replace font provider */
-		const gchar *font_description;
+		gchar *font_description;
 		gchar *cssStyling;
 
 		font_description = pango_font_description_to_css(desc);
 		cssStyling = g_strconcat("textview, textview text ", font_description, "\n", NULL);
+		g_free (font_description);
 
 		if (XPAD_TEXT_VIEW (view)->priv->font_provider) {
 			gtk_style_context_remove_provider (context, GTK_STYLE_PROVIDER (XPAD_TEXT_VIEW (view)->priv->font_provider));

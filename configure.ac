@@ -1,7 +1,7 @@
 # Process this file with autoconf to produce a configure script.
 
 # Sets up autoconf.
-AC_INIT([Xpad],[5.5],[xpad-hackers@lists.launchpad.net])
+AC_INIT([Xpad],[5.6],[xpad-hackers@lists.launchpad.net])
 AC_CONFIG_SRCDIR(src/xpad-app.c)
 AC_CONFIG_HEADERS([config.h:config.h.in])
 
@@ -93,10 +93,20 @@ if test "x${prefix}" = "xNONE"; then
 else
   PREFIX="${prefix}"
 fi
-AC_DEFINE_UNQUOTED(LOCALE_DIR, "${PREFIX}/${DATADIRNAME}/locale",[Locale directory])
-AC_DEFINE_UNQUOTED(THEME_DIR, "${PREFIX}/${DATADIRNAME}/icons",[Icon directory])
-AC_DEFINE_UNQUOTED(HELP_FILE, "${PREFIX}/${DATADIRNAME}/xpad/help/xpad-user-help.txt",[Help file])
-AC_DEFINE_UNQUOTED(BASE_DIR, "${PREFIX}",[Base directory])
+
+# Define the help path and filename
+HELP_DIR="$PACKAGE/help"
+HELP_FILE_NAME="xpad-user-help.txt"
+AC_SUBST(HELP_DIR)
+AC_SUBST(HELP_FILE_NAME)
+
+#Define the locale path
+LOCALE_DIR="locale"
+AC_SUBST(LOCALE_DIR)
+
+#Define the icon path
+ICON_PATH="icons"
+AC_SUBST(THEME_DIR)
 
 # Determines if we're debugging.
 AC_ARG_ENABLE(debug,
@@ -104,11 +114,10 @@ AC_ARG_ENABLE(debug,
   enable_debug="$enableval",
   enable_debug=no)
 if test "$enable_debug" = "yes"; then
-  DEBUG_CFLAGS="-ansi -Wall -Werror -g -O0 -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGTK_MULTIHEAD_SAFE -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE"
+  DEBUG_CFLAGS="-std=c99 -Wall -Werror -g -O0 -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGTK_MULTIHEAD_SAFE -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE"
 else
   if test "$enable_debug" = "most"; then
-    DEBUG_CFLAGS="-ansi -Wall -g -O0 -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_MULTIHEAD_SAFE -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE"
-#    DEBUG_CFLAGS="-ansi -Wall -Werror -g -O0 -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_MULTIHEAD_SAFE -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE -Wno-deprecated-declarations"
+    DEBUG_CFLAGS="-std=c99 -Wall -Werror -g -O0 -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_MULTIHEAD_SAFE -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE -Wno-deprecated-declarations"
   else
     DEBUG_CFLAGS="-Wno-deprecated-declarations"
   fi
