@@ -9,7 +9,10 @@ Build-Depends:
  libgl1-mesa-dev,
  libglib2.0-dev,
  libgtk-3-dev,
- libgtksourceview-4-dev
+ libgtksourceview-4-dev,
+# enforce the minimum pango version required by upstream code,
+# see https://bugs.launchpad.net/xpad/+bug/1964094
+ libpango1.0-dev (>= 1.50)
 Standards-Version: 4.6.0
 Homepage: https://launchpad.net/xpad
 Vcs-Git: https://salsa.debian.org/jcfp/xpad.git
