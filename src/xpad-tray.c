@@ -25,16 +25,16 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
+#include "xpad-settings.h"
+
 #ifdef HAVE_APP_INDICATOR
-#include <libappindicator/app-indicator.h>
-#endif
+#include <libayatana-appindicator/app-indicator.h>
 
 #include "xpad-tray.h"
 #include "xpad-app.h"
 #include "xpad-pad.h"
 #include "xpad-pad-group.h"
 #include "xpad-preferences.h"
-#include "xpad-settings.h"
 #include "fio.h"
 #include "help.h"
 
@@ -46,10 +46,10 @@ enum
 	NEW_PAD
 };
 
-static AppIndicator *app_indicator = NULL;
-
 #define ICON_NAME "xpad"
 #define TRAY_ICON "xpad-panel"
+
+static AppIndicator *app_indicator = NULL;
 
 static void menu_spawn (XpadSettings *settings)
 {
@@ -59,7 +59,7 @@ static void menu_spawn (XpadSettings *settings)
 
 static GtkWidget* xpad_tray_create_menu(XpadSettings *settings) {
 	XpadPadGroup *group = xpad_app_get_pad_group ();
-	gboolean no_pads = !xpad_pad_group_has_pads (group);
+	gboolean has_pads = xpad_pad_group_has_pads (group);
 
 	GtkWidget *menu = gtk_menu_new ();
 	GtkWidget *item;
@@ -74,16 +74,12 @@ static GtkWidget* xpad_tray_create_menu(XpadSettings *settings) {
 	item = gtk_menu_item_new_with_mnemonic (_("_Show All"));
 	g_signal_connect_swapped (item, "activate", G_CALLBACK (xpad_pad_group_show_all), group);
 	gtk_container_add (GTK_CONTAINER (menu), item);
-
-	if (no_pads)
-		gtk_widget_set_sensitive (item, FALSE);
+	gtk_widget_set_sensitive (item, has_pads);
 
 	item = gtk_menu_item_new_with_mnemonic (_("_Close All"));
 	g_signal_connect_swapped (item, "activate", G_CALLBACK (xpad_pad_group_close_all), group);
 	gtk_container_add (GTK_CONTAINER (menu), item);
-
-	if (no_pads)
-		gtk_widget_set_sensitive (item, FALSE);
+	gtk_widget_set_sensitive (item, has_pads);
 
 	item = gtk_separator_menu_item_new ();
 	gtk_container_add (GTK_CONTAINER (menu), item);
@@ -209,3 +205,18 @@ gboolean xpad_tray_has_indicator ()
 	else
 		return FALSE;
 }
+
+#else
+
+void xpad_tray_init (XpadSettings *settings) {
+}
+
+void xpad_tray_dispose (XpadSettings *settings) {
+}
+
+gboolean xpad_tray_has_indicator ()
+{
+	return FALSE;
+}
+
+#endif

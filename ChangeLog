@@ -1,3 +1,8 @@
+Version 5.7
+* Fix: undo build dependency on Pango v1.50 back to Pango v1.32 (#1964094)
+* Fix: Replace libappindicator with libayatana-appindicator, since libappindicator is not maintained. (#1964116)
+* Fix: App indicator (systray): make [Show All] / [Close All] menu items clickable
+
 Version 5.6
 * Fix: build problem where external files, like the help, were inaccessible. (#1960838)
 * Fix: if pads changed (new, update or delete) the change was not reflected in in the tray overview with the pads. (#1960802)
