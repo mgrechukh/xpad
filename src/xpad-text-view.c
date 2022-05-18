@@ -110,7 +110,11 @@ xpad_text_view_constructed (GObject *object)
 
 	gtk_text_view_set_buffer (GTK_TEXT_VIEW (view), GTK_TEXT_BUFFER (view->priv->buffer));
 	gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view), GTK_WRAP_WORD);
-	gtk_container_set_border_width (GTK_CONTAINER (view), 5);
+	gtk_text_view_set_top_margin (GTK_TEXT_VIEW (view), 5);
+	gtk_text_view_set_bottom_margin (GTK_TEXT_VIEW (view), 5);
+	gtk_text_view_set_left_margin (GTK_TEXT_VIEW (view), 5);
+	gtk_text_view_set_right_margin (GTK_TEXT_VIEW (view), 5);
+
 	gchar *widget_name = g_strdup_printf ("%p", (void *) view);
 	gtk_widget_set_name (GTK_WIDGET (view), widget_name);
 	g_free (widget_name);
@@ -346,19 +350,22 @@ xpad_text_view_notify_colors (XpadTextView *view)
 /* Set the foreground and background color of the visible part of the pad, which is the text view */
 void
 xpad_text_view_set_colors (GtkWidget *view, GdkRGBA *text_color, GdkRGBA *back_color) {
-	gchar *text_color_string = gdk_rgba_to_string (text_color);
-	gchar *back_color_string = gdk_rgba_to_string (back_color);
+	gchar *text_color_string = text_color ? gdk_rgba_to_string (text_color) : "@theme-fg_color";
+	gchar *back_color_string = back_color ? gdk_rgba_to_string (back_color) : "@theme_bg_color";
 
-	gchar *cssStyling = g_strconcat("textview, textview text {caret-color: ",
-			text_color ? text_color_string : "@theme-fg_color",
-			"; color: ",
-			text_color ? text_color_string : "@theme_fg_color",
-			"; background-color: ",
-			back_color ? back_color_string : "@theme_bg_color",
+	gchar *cssStyling = g_strconcat(
+			"textview, textview text {caret-color: ", text_color_string,
+			"; color: ", text_color_string,
+			"; background-color: ", back_color_string,
 			";}\n", NULL);
 
-	g_free (text_color_string);
-	g_free (back_color_string);
+	if (text_color) {
+		g_free (text_color_string);
+	}
+
+	if (back_color) {
+		g_free (back_color_string);
+	}
 
 	/*
 	 * TODO: If the background color is close to the text selection background color (blue-ish),
