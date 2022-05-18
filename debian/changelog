@@ -1,3 +1,9 @@
+xpad (5.8.0-1) UNRELEASED; urgency=medium
+
+  * New upstream version 5.8.0
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Wed, 18 May 2022 08:55:36 +0000
+
 xpad (5.7.0-2) unstable; urgency=medium
 
   * Fix the debian revision.
