@@ -1,3 +1,9 @@
+xpad (5.8.0-2) UNRELEASED; urgency=medium
+
+  * Set upstream metadata fields: Repository-Browse.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Thu, 19 May 2022 07:28:14 -0000
+
 xpad (5.8.0-1) unstable; urgency=medium
 
   * New upstream version 5.8.0, fixes:
