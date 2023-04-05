@@ -1736,7 +1736,7 @@ void xpad_pad_append_pad_titles_to_menu (GtkWidget *menu)
 }
 
 gchar* xpad_pad_get_title_for_menu(XpadPad *pad, gint pad_number) {
-	gchar *tmp_title = g_strndup (gtk_window_get_title (GTK_WINDOW (pad)), 20);
+	gchar *tmp_title = g_utf8_substring(gtk_window_get_title (GTK_WINDOW (pad)), 0, 20);
 	str_replace_tokens (&tmp_title, '_', "__");
 	gchar *title;
 
